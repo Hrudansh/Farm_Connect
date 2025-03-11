@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import torchvision.transforms as transforms
 import torchvision.models as models
-from torchvision.models.mobilenet import MobileNet_V2_Weights
+from torchvision.models import mobilenet_v2, MobileNet_V2_Weights
 import pandas as pd
 
 # Load disease and supplement info
@@ -16,7 +16,8 @@ class_names = list(disease_info['disease_name'])
 
 # Load MobileNetV2 Model
 num_classes = 39  # Adjust based on the number of classes in your dataset
-model = models.mobilenet_v2(weights=models.MobileNet_V2_Weights.DEFAULT) # Use 'pretrained' for older torchvision versions
+weights = MobileNet_V2_Weights.DEFAULT  # Ensure compatibility with your torchvision version
+model = mobilenet_v2(weights=weights)
 model.classifier[1] = torch.nn.Linear(model.classifier[1].in_features, num_classes)  # Adjust for classification
 model.load_state_dict(torch.load("plant_disease_mobilenetv2.pt", map_location=torch.device('cpu')))
 model.eval()
