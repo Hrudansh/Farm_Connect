@@ -6,7 +6,6 @@ import torch
 import torchvision.transforms as transforms
 import torchvision.models as models
 import pandas as pd
-from torchvision.models import MobileNet_V2_Weights
 
 # Load disease and supplement info
 disease_info = pd.read_csv('disease_info.csv', encoding='cp1252')
