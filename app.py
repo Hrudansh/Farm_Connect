@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import torchvision.transforms as transforms
 import torchvision.models as models
-from torchvision.models import MobileNet_V2_Weights
+from torchvision.models.mobilenet import MobileNet_V2_Weights
 import pandas as pd
 
 # Load disease and supplement info
