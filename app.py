@@ -6,6 +6,7 @@ import torch
 import torchvision.transforms as transforms
 import torchvision.models as models
 import pandas as pd
+from torchvision.models import MobileNet_V2_Weights
 
 # Load disease and supplement info
 disease_info = pd.read_csv('disease_info.csv', encoding='cp1252')
@@ -15,7 +16,7 @@ class_names = list(disease_info['disease_name'])
 
 # Load MobileNetV2 Model
 num_classes = 39  # Adjust based on the number of classes in your dataset
-model = models.mobilenet_v2(weights=None)  # No pre-trained weights
+model = models.mobilenet_v2(weights=MobileNet_V2_Weights.IMAGENET1K_V1)
 model.classifier[1] = torch.nn.Linear(model.classifier[1].in_features, num_classes)  # Adjust for classification
 model.load_state_dict(torch.load("plant_disease_mobilenetv2.pt", map_location=torch.device('cpu')))
 model.eval()
