@@ -24,6 +24,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE $PORT
 
 # Command to run the application with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:7860", "app:app"]
+CMD ["gunicorn", "--timeout", "600", "-k", "sync", "app:app"]
 
 RUN mkdir -p /app/static/uploads && chmod -R 777 /app/static/uploads
