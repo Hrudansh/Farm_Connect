@@ -91,4 +91,5 @@ def market():
                            buy=list(supplement_info['buy link']))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 7860))  # Default to 7860 if PORT is not set
+    app.run(host="0.0.0.0", port=port)
