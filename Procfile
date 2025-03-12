@@ -1,1 +1,1 @@
-web: gunicorn --timeout 600 -k sync app:app
+web: gunicorn --timeout 300 -k sync app:app
