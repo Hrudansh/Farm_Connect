@@ -99,4 +99,6 @@ Contributions are welcome! Please fork the repo and submit a pull request.
 
 ![Farm Connect UI](UI_images/Screenshot%202025-01-28%20163322.png)
 
+![Farm_Connect_UI](UI_images/Screenshot%2025-02-11%000831.png)
+
 
