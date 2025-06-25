@@ -88,6 +88,8 @@ Secure authentication and data handling using Firebase/Auth0.
 
 🌐 Current chatbot supports only English (multilingual expansion ongoing).
 
+![Farm Connect UI](UI_images/Screenshot 2025-01-28 163322.png)
+
 📡 Connectivity issues in rural areas tackled via offline capabilities.
 
 🔁 Real-time training updates and community image contributions under development.
